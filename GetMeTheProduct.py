@@ -10,7 +10,8 @@ def GetMeTheProduct(n,m):
     if i>j:               # if our assumption of 2nd number being larger is wrong, i.e 1st number is larger
         l,s = n,m         # then we make l = n and s = m
     else:                 # if our assumption is right then, value of i and j should be interchanged because
-         i,j = j,i        # value of i should always contain length of larger number, and value of j should contain value of smaller number
+         i,j = j,i        # value of i should always contain length of larger number, and value of j should contain value of smaller-
+                          # -number
     
     ans = [0 for x in range(i+2+j)]      # product of any 2 number can contain at most sum of length of both the numbers
  
@@ -35,7 +36,8 @@ def GetMeTheProduct(n,m):
         bjk = len(l) + len(s) + 1                 # bjk is index used to access our ans array(list)
         while True:
             prod = int(l[bk]) * int(s[j])
-            if len(str(prod)) == 1:               #if no carry is generated then just add the current product to it's corresponding index
+            if len(str(prod)) == 1:               # if no carry is generated then just add the current product to it's corresponding 
+                                                  # index
                 ans[bjk-k] += prod 
             
             else:
@@ -46,7 +48,8 @@ def GetMeTheProduct(n,m):
                 ans[bjk-k-1] += temp_int0
                 ans[bjk-k]   += temp_int1
                 
-            loop = bjk                            # if more than 9 i.e 10 and above value is stored at any index of ans, we move the tens digit number to left and one's digit number stays there.
+            loop = bjk                            # if more than 9 i.e 10 and above value is stored at any index of ans, we move the 
+                                                  # tens digit number to left and one's digit number stays there.
                 
             while loop != 0:
            
